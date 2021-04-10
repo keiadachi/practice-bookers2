@@ -1,8 +1,11 @@
-  <table>
-    <tbody>
-        <tr><th>name</th><th><%= user.name %></th></tr>
-        <tr><th>introduction</th><th><%= user.introduction %></th></tr>
+<table class='table'>
+  <tr><%= attachment_image_tag(user, :profile_image_id, :fill, 100, 100, fallback: "no_image.jpg", size:'50x50', class: "attachment user profile_image fallback") %></tr>
+  <tr><th>name</th><th><%= user.name %></th></tr>
+  <tr><th>introduction</th><th><%= user.introduction %></th></tr>
     </tbody>
   </table>
-<%= link_to "編集", edit_user_path(user) %>
+
+<div class='row'>
+<%= link_to "", edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+</div>
 
