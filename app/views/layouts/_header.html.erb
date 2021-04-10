@@ -1,0 +1,20 @@
+<header>
+  <nav class= "navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <%= link_to "Bookers",root_path, class:"navbar-brand" %>
+
+      <% if user_signed_in? %>
+       <p><%= link_to "Home",user_path(current_user) %></p>
+       <p><%= link_to "Users",users_path %></p>
+       <p><%= link_to "Books",books_path %></p>
+       <p><%= link_to "logout",user_path(current_user) %></p>
+      <% else %>
+       <p><%= link_to "Home",root_path %></p>
+       <p><%= link_to "About",home_about_path %></p>
+       <p><%= link_to "登録",new_user_registration_path %></p>
+       <p><%= link_to "ログイン",new_user_session_path %></p>
+      <% end %>
+      
+    </div>
+  </nav>
+</header>
